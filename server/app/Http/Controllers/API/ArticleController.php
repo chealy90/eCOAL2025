@@ -21,14 +21,24 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //return response()->json(Article::find(1), 201);
-       /*$validated = $request->validate([
+       $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required|string',
             'thumbnailURL' => 'required|url',
             'leadStory' => 'required|boolean',
+            'mediaURL' => 'url',
         ]);
-*/
+
+        /* Pour upload des fichiers (test pas possible avec Postman)
+
+        $f1 = $request->file('thumbnailURL')->hashName();
+        $request->file('thumbnailURL')->move("upload", $f1);
+
+        $f2 = $request->file('mediaURL')->hashName();
+        $request->file('mediaURL')->move("upload", $f2);
+
+        */
+
         $article = Article::create(
             [
                 'title' => $request->input('title'),
@@ -55,7 +65,22 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'content' => 'required|string',
+            'thumbnailURL' => 'required|url',
+            'leadStory' => 'required|boolean',
+            'mediaURL' => 'url',
+        ]);
+
+        $article->title=$request->input('title');
+        $article->content=$request->input('content');
+        $article->thumbnailURL=$request->input('thumbnailURL');
+        $article->leadStory=$request->input('leadStory');
+        $article->mediaURL=$request->input('mediaURL');
+        $article->save();
+
+        return response()->json($article, 200);
     }
 
     /**
