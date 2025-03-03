@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     use HasFactory;
-
+    protected $fillable = ['title', 'content', 'thumbnailURL', 'leadStory'];
 
     public function tags()
     {
