@@ -8,6 +8,8 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+import styles from "./Home.module.css";
+
 import { Carousel } from 'antd';
 
 import BookIcon from "../assets/book.png"
@@ -45,15 +47,6 @@ const card = (
     </React.Fragment>
 );
 
-
-const contentStyle = {
-    height: '160px',
-    color: '#fff',
-    lineHeight: '160px',
-    textAlign: 'center',
-    background: '#364d79',
-};
-
 function Home() {
     return (
         <>
@@ -66,16 +59,16 @@ function Home() {
                     autoplaySpeed={5000}
                 >
                     <div>
-                        <h3 style={contentStyle}>1</h3>
+                        <h3 className={styles.card}>1</h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>2</h3>
+                        <h3 className={styles.card}>2</h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>3</h3>
+                        <h3 className={styles.card}>3</h3>
                     </div>
                     <div>
-                        <h3 style={contentStyle}>4</h3>
+                        <h3 className={styles.card}>4</h3>
                     </div>
                 </Carousel>
 
@@ -85,7 +78,7 @@ function Home() {
                     <img src={BookIcon} alt="book Icon" />
                 </div>
 
-                <Box sx={{ minWidth: 275 }}>
+                <Box sx={{ minWidth: 275 }} >
                     <Card variant="outlined">{card}</Card>
                 </Box>
 
