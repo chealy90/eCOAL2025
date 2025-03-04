@@ -1,7 +1,22 @@
-.card{
+.card {
     height: 160px;
-    color : #fff;
+    color: #fff;
     line-height: 160px;
     text-align: center;
     background-color: #364d79;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+    height: 100vh;
+    /* Sets height to fill the viewport */
+}
+
+main>h1 {
+    display: flex;
+    justify-content: flex-start;
 }

@@ -1,11 +1,7 @@
-import { Card, Col, Row } from 'antd';
-
-import { Pagination } from "antd";
-
 import React, { useState } from 'react';
 import { AutoComplete, Input } from 'antd';
 
-
+import Card from "./Card"
 
 
 function Popular() {
@@ -31,7 +27,7 @@ function Popular() {
                             <span>
                                 Found {query} on{' '}
                                 <a
-                                    href={`https://s.taobao.com/search?q=${query}`}
+                                    href={`https://localhost:8000/searchcount?search=${query}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -64,28 +60,14 @@ function Popular() {
                 onSearch={handleSearch}
                 size="large"
             >
-                <Input.Search size="large" placeholder="input here" enterButton />
+                <Input.Search size="large" placeholder="Search e.g. 'title'" enterButton />
             </AutoComplete>
-            <Row gutter={16}>
-                <Col span={8}>
-                    <Card title="Card title" variant="borderless">
-                        Card content
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="Card title" variant="borderless">
-                        Card content
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card title="Card title" variant="borderless">
-                        Card content
-                    </Card>
-                </Col>
-            </Row>
+            <Card />
+            <Card />
+            <Card />
+            <Card />
         </>
     )
 }
-// <Pagination align="center" defaultCurrent={1} total={50} onChange={handleChange} />
 
 export default Popular;

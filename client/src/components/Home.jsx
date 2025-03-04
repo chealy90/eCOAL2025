@@ -47,6 +47,7 @@ const card = (
     </React.Fragment>
 );
 
+// NOTE: Starting Home
 function Home() {
     return (
         <>
