@@ -1,0 +1,50 @@
+
+
+#createArticleContainer {
+    margin: 10px auto;
+    width: 100%;
+    padding: 50px 10px;
+    font-family: sans-serif;   
+}
+
+#createArticleContainer form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto;
+}
+
+h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px auto;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+textarea::placeholder {
+    font-family: sans-serif;
+}
+
+button {
+    width: 90%;
+    margin: 30px auto;
+    height: 60px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+}
