@@ -11,7 +11,6 @@ import Typography from '@mui/material/Typography';
 import { Carousel } from 'antd';
 
 import BookIcon from "../assets/book.png"
-import Header from "./Header"
 
 
 // NOTE: Starting card settings
@@ -58,7 +57,6 @@ const contentStyle = {
 function Home() {
     return (
         <>
-            <Header />
             <main>
                 <h1>Home</h1>
                 <Carousel
