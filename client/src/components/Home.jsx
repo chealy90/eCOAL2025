@@ -1,59 +1,24 @@
 import { Link } from "react-router-dom";
-
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
 import styles from "./Home.module.css";
+
+import TitleCards from "./TitleCards";
 
 import { Carousel } from 'antd';
 
 import BookIcon from "../assets/book.png"
 
 
-// NOTE: Starting card settings
-const bull = (
-    <Box
-        component="span"
-        sx={{ display: 'inline-block', mx: '2px', transform: 'scale(0.8)' }}
-    >
-        •
-    </Box>
-);
-
-const card = (
-    <React.Fragment>
-        <CardContent>
-            <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                Word of the Day
-            </Typography>
-            <Typography variant="h5" component="div">
-                be{bull}nev{bull}o{bull}lent
-            </Typography>
-            <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>adjective</Typography>
-            <Typography variant="body2">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-            </Typography>
-        </CardContent>
-        <CardActions>
-            <Button size="small">Learn More</Button>
-        </CardActions>
-    </React.Fragment>
-);
-
 // NOTE: Starting Home
 function Home() {
+
     return (
         <>
             <main>
                 <h1>Home</h1>
                 <Carousel
+                    className="carousel"
                     autoplay={{
                         dotDuration: true,
                     }}
@@ -73,16 +38,12 @@ function Home() {
                     </div>
                 </Carousel>
 
-                <h2>Popular</h2>
                 <div>
                     <Link to="/popular">Show all</Link>
                     <img src={BookIcon} alt="book Icon" />
+                    <TitleCards />
+                    <TitleCards theme="Latest" />
                 </div>
-
-                <Box sx={{ minWidth: 275 }} >
-                    <Card variant="outlined">{card}</Card>
-                </Box>
-
             </main >
         </>
     )
