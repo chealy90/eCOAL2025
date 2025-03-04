@@ -8,9 +8,5 @@
 :root {
     --accent-color: #7E3086;
     --dark-color: #2A2A2A;
-}
 
-#root {
-    width: 100%;
-    position: relative;
 }
