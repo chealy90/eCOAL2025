@@ -1,10 +1,12 @@
 <?php
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\API\TagController;
+use App\Http\Controllers\API\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,9 @@ use App\Http\Controllers\AuthController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::apiResource('articles', ArticleController::class);
+Route::apiResource('tags', TagController::class);
 
 
 Route::post('/register', [AuthController::class, 'register']);
