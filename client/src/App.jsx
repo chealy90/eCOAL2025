@@ -4,7 +4,7 @@ import './App.css'
 
 import Home from './components/Home'
 import Popular from "./components/Popular"
-// import UserPage from './components/UserPage'
+import UserProfile from "./components/UserProfile"
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
     <Routes>
       <Route path="/" element=<Home /> />
       <Route path="/popular" element=<Popular /> />
+      <Route path="/profile" element=<UserProfile /> />
       <Route path='*' element={<h4>Error 404</h4>} />
     </Routes>
   )
