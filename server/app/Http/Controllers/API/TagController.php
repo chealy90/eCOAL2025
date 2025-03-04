@@ -21,7 +21,17 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:20'
+        ]);
+
+        $tag = Tag::create(
+            [
+                'name' => $request->input('name')
+            ]
+        );
+        
+        return response()->json($tag, 201);
     }
 
     /**
@@ -39,7 +49,14 @@ class TagController extends Controller
      */
     public function update(Request $request, Tag $tag)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:20'
+        ]);
+
+        $tag->name=$request->input('name');
+        $tag->save();
+
+        return response()->json($tag, 200);
     }
 
     /**
@@ -47,6 +64,8 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag)
     {
-        //
+        $tag->articles()->detach();
+        $tag->delete();
+        return response()->json(null, 204);
     }
 }
