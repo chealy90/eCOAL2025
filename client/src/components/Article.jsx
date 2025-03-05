@@ -1,6 +1,6 @@
 import styles from './Article.module.css'
 import { useState } from 'react'
-import { Route, Link, Routes } from "react-router-dom"
+import { Route, Link, Routes } from "react-router"
 import { useEffect } from 'react';
 import axios from "axios";
 

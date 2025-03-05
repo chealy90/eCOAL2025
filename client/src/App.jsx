@@ -11,7 +11,6 @@ import { Routes, Route, Link } from 'react-router'
 import react from 'react'
 import Article from './components/Article.jsx'
 import Detail from './components/Detail.jsx'
-import react from 'react'
 
 
 function App() {
@@ -23,6 +22,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<h2>cc</h2>}/>
+        <Route path='/detail/:id' element={<Detail />}/>
         <Route path="/login" element={<Login setCookie={setCookie}/>} />
         <Route path="/register" element={<Register setCookie={setCookie}/>} />
       </Routes>
