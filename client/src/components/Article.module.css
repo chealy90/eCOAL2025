@@ -1,0 +1,22 @@
+.article{
+    padding:2rem;
+    border-radius: 1rem;
+    max-width: 500px;
+}
+
+
+.article h1{
+    align-self: left;
+    font-size: 1.5rem;
+}
+
+.titleBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.article p{
+    text-align: left;
+}
+
