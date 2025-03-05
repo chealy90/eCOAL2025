@@ -11,7 +11,7 @@ import { useParams } from 'react-router';
 function Detail() {
 
     let params = useParams();
-    const [article1, updateArticle1] = useState([])
+    const [article1, updateArticle1] = useState(null)
 
     async function getArticle() {
         const article = (await axios.get('http://localhost:8000/api/articles/' + params.id)).data;
@@ -20,8 +20,10 @@ function Detail() {
 
     useEffect(() => {
         getArticle()
-    })
+    },[])
 
+    if (article1 === null) 
+        return (<div>loading...</div>)
  
     return (
         <div className={styles.detailArticle}>  
