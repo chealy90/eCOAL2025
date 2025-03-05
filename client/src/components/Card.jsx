@@ -16,45 +16,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import styles from "./Card.module.css"
+import { Link } from '@mui/material';
 
-
-const ExpandMore = styled((props) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
-})(({ theme }) => ({
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-    variants: [
-        {
-            props: ({ expand }) => !expand,
-            style: {
-                transform: 'rotate(0deg)',
-            },
-        },
-        {
-            props: ({ expand }) => !!expand,
-            style: {
-                transform: 'rotate(180deg)',
-            },
-        },
-    ],
-}));
 
 // NOTE: When the css is finally finished, we'll apply 'props' and replace the
 // hardcoded information, for example: description, title, author, etc;
 export default function Post(props) {
-    const [expanded, setExpanded] = React.useState(false); // State to manage ExpandMore button direction 
     const [favorite, setFavorite] = React.useState(false); // State to manage Favorite button color
 
     const handleFavoriteClick = () => {
         setFavorite(!favorite);  // Toggles the 'favorite' state
     };
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
 
     return (
         <Card sx={{ maxWidth: 345 }} className={styles.card}>
@@ -69,14 +42,12 @@ export default function Post(props) {
                         <MoreVertIcon />
                     </IconButton>
                 }
-                title="Shrimp and Chorizo Paella"
-                subheader="September 14, 2016"
+                title={props.title}
+                subheader={props.update_at ? props.update_at : props.create_at}
             />
             <CardContent>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    This impressive paella is a perfect party dish and a fun meal to cook
-                    together with your guests. Add 1 cup of frozen peas along with the mussels,
-                    if you like.
+                    {/* FIX: Insert function to send sinopse*/}
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -90,8 +61,12 @@ export default function Post(props) {
                 <IconButton aria-label="share">
                     <ShareIcon />
                 </IconButton>
-                
             </CardActions>
+
+            <div>
+                <Link top={}>See more</Link>
+            </div>
+
         </Card >
     );
 }
