@@ -1,0 +1,36 @@
+body{
+    background-color: #ffffff;
+}
+
+.detailArticle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.blockTitle{
+    display: flex;
+    width: 100%;
+}
+
+.articleH1{
+    justify-self: flex-start;
+    color: #7E3086; 
+    font-size: 1.3rem;
+}
+
+.articleContent{
+    font-size: 1rem;
+    color: #000000;
+    text-align: justify;
+}
+
+.imgArticle{
+    aspect-ratio: 1/1;
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center ;
+}
