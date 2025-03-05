@@ -5,14 +5,21 @@ import './css/App.css'
 import Header from './components/Header'
 import CreateArticle from './components/CreateArticle'
 import Login from './components/Login'
-function App() {
+import Register from './components/Register'
+import { useCookies } from 'react-cookie'
+import { Routes, Route, Link } from 'react-router'
 
-  
-  
+function App() {
+  const [cookies, setCookie, removeCookie] = useCookies(['mycookie']);
 
   return (
     <>
-      <Login />
+      <Header/>
+      <Routes>
+        <Route path='/' element={<h2>cc</h2>}/>
+        <Route path="/login" element={<Login setCookie={setCookie}/>} />
+        <Route path="/register" element={<Register setCookie={setCookie}/>} />
+      </Routes>
     </>
   )
 }
