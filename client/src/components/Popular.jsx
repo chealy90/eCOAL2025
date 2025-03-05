@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { AutoComplete, Input } from 'antd';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 import Card from "./Card"
 
@@ -47,6 +49,19 @@ function Popular() {
         console.log('onSelect', value);
     };
 
+    const [articles, setArticles] = useState([]) // At the begining we do not have articles
+
+    async function getArticles() {  // The function is asynchronous
+        const articles = (await axios.get('http://localhost:8000/api/articles')).data
+        console.log(articles)
+        setArticles(articles)
+    }
+
+    useEffect(() => { // this is a hook called everytime the function is rendered again
+        // Don't forget to import useEffect
+        getArticles()
+    }, []);
+
     return (
         <>
             <h1>Popular</h1>
@@ -62,10 +77,10 @@ function Popular() {
             >
                 <Input.Search size="large" placeholder="Search e.g. 'title'" enterButton />
             </AutoComplete>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+
+            {articles.map(article => (
+                <Card key={article.id} article={article} />
+            ))}
         </>
     )
 }
