@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 *, *::after, *::before {
     padding: 0;
     box-sizing: border-box;
@@ -9,5 +12,14 @@
 :root {
     --accent-color: #7E3086;
     --dark-color: #2A2A2A;
+}
 
+body {
+    min-height: 100vh;;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }

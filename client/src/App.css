@@ -4,6 +4,7 @@
 body{
   font-family: "Inter", sans-serif;
   color: #2A2A2A;
+
 }
 
 #root {
@@ -11,6 +12,7 @@ body{
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
 .logo {
