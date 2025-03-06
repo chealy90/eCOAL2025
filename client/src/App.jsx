@@ -11,6 +11,7 @@ import { Routes, Route, Link } from 'react-router'
 import react from 'react'
 import Article from './components/Article.jsx'
 import Detail from './components/Detail.jsx'
+import Footer from './components/Footer.jsx'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/login" element={<Login setCookie={setCookie}/>} />
         <Route path="/register" element={<Register setCookie={setCookie}/>} />
       </Routes>
+      <Footer/>
 
     </>
   )
