@@ -39,12 +39,22 @@ function UserProfile(props) {
 
     return (
         <div className={styles.col_container}>
+<<<<<<< HEAD
             <div className={styles.img_container}>
                 <img className={styles.imgUser} src={UserImg} alt="User Image" />
                 <h2 className={styles.userName}>{profile?.name}</h2>
             </div>
             <p>{profile?.email}</p>
             <Link className={styles.lien} to={"/new-article"}>+ Add Article</Link>
+=======
+                <div className={styles.img_container}>
+                    <img className={styles.imgUser} src={UserImg} alt="User Image" />
+                    <h2 className={styles.userName}>Flying Baguette</h2>
+                </div>
+                <p className={styles.mail}>example@email.com</p>
+                <Link className={styles.lien} to={"/new-article"}>+ Add Article</Link>
+        
+>>>>>>> 7eb0d1ca16186abcf32604cc0f12e9c66b0d78ba
 
 
 

@@ -13,7 +13,7 @@ function Footer() {
     return (
         <div className={styles.pageFooter}>
                 <Link to="/search"><CiSearch className={styles.footerIcon} /></Link>
-                <Link to="/"><CiHome className={styles.footerIcon} /></Link>
+                <Link to="/home"><CiHome className={styles.footerIcon} /></Link>
                 <Link to="/profile"><CiUser className={styles.footerIcon} /></Link>
         </div>
     )
