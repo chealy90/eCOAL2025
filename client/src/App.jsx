@@ -27,12 +27,9 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<h2>cc</h2>}/>
-<<<<<<< HEAD
         <Route path='createArticle' element={<CreateArticle setCookie={setCookie}/>}/>
         <Route path='/detail/:id' element={<Detail />}/>
-=======
         <Route path='/home' element={<Home />}/>
->>>>>>> home_page
         <Route path="/login" element={<Login setCookie={setCookie}/>} />
         <Route path="/register" element={<Register setCookie={setCookie}/>} />
         <Route path="/search" element={<Search />} />
