@@ -12,6 +12,9 @@ import react from 'react'
 import Article from './components/Article.jsx'
 import Detail from './components/Detail.jsx'
 
+import UserProfile from "./components/UserProfile"
+import Search from "./components/Search"
+
 
 function App() {
   const [cookies, setCookie, removeCookie] = useCookies(['mycookie']);
@@ -26,6 +29,8 @@ function App() {
         <Route path='/detail/:id' element={<Detail />}/>
         <Route path="/login" element={<Login setCookie={setCookie}/>} />
         <Route path="/register" element={<Register setCookie={setCookie}/>} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/profile" element={<UserProfile />} />
       </Routes>
 
     </>

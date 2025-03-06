@@ -1,0 +1,28 @@
+/* Popular.module.css */
+
+body {
+    background-color: white;
+}
+
+main {
+    margin-bottom: 300px;
+}
+
+h1 {
+    display: flex;
+    font-size: 27px;
+    justify-content: flex-start;
+    color: black;
+    margin-bottom: 20px;
+    text-align: center;
+    /* Centers the heading text */
+}
+
+.searchContainer {
+    margin-bottom: 30px;
+}
+
+.search {
+    text-align: center;
+    width: 300px;
+}

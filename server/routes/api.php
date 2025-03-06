@@ -21,6 +21,10 @@ use App\Http\Controllers\API\ArticleController;
 
 Route::apiResource('articles', ArticleController::class);
 Route::apiResource('tags', TagController::class);
+Route::get("search", function(Request $request) {
+    return Article::whereRaw("title like CONCAT('%',?,'%')", [$request->input("search")])->get();
+
+});
 
 
 Route::post('/register', [AuthController::class, 'register']);

@@ -28,4 +28,7 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+.sqlite
+
+**/.DS_Store
 
