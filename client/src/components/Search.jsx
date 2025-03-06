@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 
 import Card from "./Card"
 
+import styles from "./Popular.module.css"
+
 
 function Popular() {
 
@@ -102,25 +104,30 @@ getArticles()
     }, []);
 
     return (
-        <>
-            <h1>Popular</h1>
-            <AutoComplete
-                popupMatchSelectWidth={252}
-                style={{
-                    width: 300,
-                }}
-                options={options}
-                onSelect={onSelect}
-                onSearch={handleSearch}
-                size="large"
-            >
-                <Input.Search size="large" placeholder="Search e.g. 'title'" enterButton />
-            </AutoComplete>
+        <main>
+            <div className={styles.searchContainer}>
+                <h1>Popular</h1>
+                <AutoComplete
+                    className={styles.search}
+                    popupMatchSelectWidth={252}
+                    options={options}
+                    onSelect={onSelect}
+                    onSearch={handleSearch}
+                    size="large"
+                >
+                    <Input.Search
+                        size="large"
+                        placeholder="Search e.g. 'title'"
+                    />
+                </AutoComplete>
+            </div>
 
-            {articles.map(article => (
-                <Card key={article.id} article={article} />
-            ))}
-        </>
+            <div className={styles.cardsTile}>
+                {articles.map(article => (
+                    <Card key={article.id} article={article} />
+                ))}
+            </div>
+        </main>
     )
         */
 }
