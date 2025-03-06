@@ -1,14 +1,14 @@
 import Article from './Article.jsx'
 import { useState } from 'react'
-import styles from './Detail.module.css'
+import styles from './Detail_home.module.css'
 import axios from "axios";
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router';
 
 
 
 
-function Detail(props) {
+function Detail_home(props) {
     /*
     let params = useParams();
     const [article1, updateArticle1] = useState([])
@@ -22,6 +22,11 @@ function Detail(props) {
         getArticle()
     })
         */
+
+    function formatDate(date) {
+        const d = new Date(date);
+        return d.toLocaleDateString()
+    } 
 
     const cleanContent = (text) => {
         let cleanedText = text.replace(/:contentReference\[.*?\]/g, '').trim()
@@ -45,19 +50,18 @@ function Detail(props) {
  
     return (
         <div className={styles.detailArticle}>  
-        <div className="overlay" style={{backgroundImage: `url(${props.article.image})` }}>
+        <div className="overlay" style={{backgroundImage: `url(${props.article.thumbnailURL})` }}>
             <div className={styles.blockTitle}>
                 <h1 className={styles.articleH1}>{props.article.title}</h1>
                 <div className="articleInfo">
-                    <p>{props.article.author}</p>
-                    <p>{props.article.postDate}</p>
+                <p>{props.article.updated_at ? formatDate(props.article.updated_at) : formatDate(props.article.created_at)}</p>
                 </div>
             </div>
-            <p className={styles.articleContent}>{cutOffArticle(cleanContent(props.article.content))}</p>         
+            <p className={styles.articleContent}>{props.article.content}</p>         
             
         </div>
         </div>
     )
 }
 
-export default Detail;
+export default Detail_home;

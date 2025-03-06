@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+
+    function popular() { 
+        return Article::where('leadStory', 1)->get();
+    }
     /**
      * Display a listing of the resource.
      */

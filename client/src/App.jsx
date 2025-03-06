@@ -11,7 +11,7 @@ import { useCookies } from 'react-cookie'
 import { Routes, Route, Link } from 'react-router'
 import react from 'react'
 import Article from './components/Article.jsx'
-import Detail from './components/Detail.jsx'
+import Detail from './components/Detail_home.jsx'
 
 
 function App() {

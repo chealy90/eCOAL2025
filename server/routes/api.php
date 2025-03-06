@@ -19,7 +19,9 @@ use App\Http\Controllers\API\ArticleController;
 |
 */
 
+Route::get('/articles/popular', [ArticleController::class, 'popular']);
 Route::apiResource('articles', ArticleController::class);
+
 Route::apiResource('tags', TagController::class);
 
 
