@@ -2,10 +2,13 @@ import React from "react";
 import { Link } from "react-router";
 import axios from "axios";
 import styles from "./Register.module.css"
+import { useNavigate } from "react-router";
 
 function Register(props) {
 
     console.log(props.setCookie)
+    const navigate = useNavigate()
+
     async function handleSubmit(e) {
         e.preventDefault();
         const name = e.target.name.value;
@@ -30,6 +33,7 @@ function Register(props) {
         
         if(result.status == 200) {
             props.setCookie("mycookie", {name: result.data.name, token: result.data.token}, "/")
+            navigate('/')
             console.log(result)
         }
     }
