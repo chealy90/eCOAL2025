@@ -52,7 +52,7 @@ export default function Post(props) {
             <CardHeader
                 avatar={
                     <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                        R
+                        <img className={styles.avatar} src={props.article.thumbnailURL} alt="" />
                     </Avatar>
                 }
                 action={
@@ -74,16 +74,15 @@ export default function Post(props) {
                     onClick={handleFavoriteClick}
                     sx={{ color: favorite ? red[500] : 'inherit' }} // Change color based on 'favorite' state
                 >
-                    <FavoriteIcon />
+                    {/* <FavoriteIcon /> */}
                 </IconButton>
                 <IconButton aria-label="share">
                     <ShareIcon />
                 </IconButton>
             </CardActions>
 
-            <div>
-                {/* <Link to={"/articles/"+props.article.id} className={styles.article} key={props.article.id}>See more</Link> */}
-                <Link to={"/profile"} className={styles.article} key={props.article.id}>See more</Link>
+            <div className={styles.seeMore}>
+                <Link to={"/detail/"+props.article.id} className={styles.article} key={props.article.id}>See more</Link>
             </div>
 
         </Card >

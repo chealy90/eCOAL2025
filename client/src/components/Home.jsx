@@ -57,7 +57,7 @@ const [articlesp, setArticlesp] = useState([])
 
             <h3>All</h3>
             <div className={styles.popularContainer}>
-                <p id="showMore">Show More</p>
+            
                 {articles.map(article => <Link className={styles.homeLien} to={"/detail/"+article.id}><HomePopularContainer article={article}/></Link>)}
             </div>
         </div>

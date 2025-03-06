@@ -9,7 +9,7 @@ const HomePopularContainer = props => {
     return (
         <div class="homePopularContainer">
             <h4>{props.article.title}</h4>
-            <div>
+            <div class="homePopularContainerDate">
                 <p>{props.article.updated_at ? formatDate(props.article.updated_at) : formatDate(props.article.created_at)}</p>
             </div>
         </div>
