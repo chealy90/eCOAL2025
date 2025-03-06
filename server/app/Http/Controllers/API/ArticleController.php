@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Tag;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -28,29 +30,41 @@ class ArticleController extends Controller
        $validated = $request->validate([
             'title' => 'required|string',
             'content' => 'required|string',
-            'thumbnailURL' => 'required|url',
-            'leadStory' => 'required|boolean',
-            'mediaURL' => 'url',
+            'thumbnailURL' => 'required|file|mimes:jpeg,png,jpg,gif,svg, video/mp4, video/avi',
+            'mediaType' => 'string',
+            'mediaURL' => 'required|file|mimes:jpeg,png,jpg,gif,svg, video/mp4, video/avi',
         ]);
-
-        /* Pour upload des fichiers (test pas possible avec Postman)
 
         $f1 = $request->file('thumbnailURL')->hashName();
         $request->file('thumbnailURL')->move("upload", $f1);
 
         $f2 = $request->file('mediaURL')->hashName();
         $request->file('mediaURL')->move("upload", $f2);
+        
 
-        */
+        $fileName1 = Storage::url("upload/".$f1);
+        $fileName2 = Storage::url("/upload/".$f2);
 
         $article = Article::create(
             [
                 'title' => $request->input('title'),
                 'content' => $request->input('content'),
-                'thumbnailURL' => $request->input('thumbnailURL'),
+                'thumbnailURL' => $fileName1,
                 'leadStory' => $request->input('leadStory'),
+                'mediaType' => $request->input('mediaType'),
+                'mediaURL' => $fileName2,
             ]
         );
+
+        $tags = explode(",", $request->input('tags'));
+        foreach($tags as $tag) {
+            $tag = trim($tag);
+            $tmp = Tag::where("name", $tag)->first();
+            if(!$tmp) 
+                $tmp = Tag::create(["name" => $tag]);
+            
+            $article->tags()->attach($tmp->id);
+        }
         
         return response()->json($article, 201);
 

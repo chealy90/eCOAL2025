@@ -12,6 +12,10 @@
     margin-bottom: 1rem;
 }
 
+.register p{
+    font-size: 0.7rem;
+}
+
 .register a{
     text-decoration: underline;
     color: #7E3086;
@@ -42,4 +46,5 @@
     width: 100%;
     margin-top: 1rem;
     border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
 }
