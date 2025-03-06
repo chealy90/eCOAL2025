@@ -5,44 +5,49 @@ import { useEffect } from 'react';
 
 import Card from "./Card"
 
-import styles from "./Popular.module.css"
+import styles from "./Search.module.css"
 
 
-function Popular() {
+function Search() {
 
     const [articles, setArticles] = useState([]) // At the begining we do not have articles
     const [search, setSearch] = useState("") // At the begining we do not have articles
-    
+
 
 
     async function getArticles() {  // The function is asynchronous
-        const articles = (await axios.get('http://localhost:8000/api/search?search='+ search)).data
+        const articles = (await axios.get('http://localhost:8000/api/search?search=' + search)).data
         console.log(articles)
         setArticles(articles)
     }
 
 
-async function changeSearch(e) {
-    e.preventDefault()
-    console.log(e)
+    async function changeSearch(e) {
+        e.preventDefault()
+        console.log(e)
 
-    setSearch(e.target[0].value)
-}
+        setSearch(e.target[0].value)
+    }
 
-useEffect(() => { // this is a hook called everytime the function is rendered again
-    // Don't forget to import useEffect
-getArticles()
-}, [search])
+    useEffect(() => { // this is a hook called everytime the function is rendered again
+        // Don't forget to import useEffect
+        getArticles()
+    }, [search])
 
     return (
         <>
-            <h1>Search</h1>
-                <form onSubmit={e=> changeSearch(e)}>
-                <Input.Search name={search} size="large" placeholder="Search e.g. 'title'" enterButton />
+            <div className={styles.searchContainer}>
+                <h1>Search</h1>
+                <form onSubmit={e => changeSearch(e)}>
+                    <Input.Search name={search} size="large" placeholder="Search e.g. 'title'" enterButton />
                 </form>
-            {articles.map(article => (
-                <Card key={article.id} article={article} />
-            ))}
+            </div>
+            <div className={styles.cardsTile}>
+                {articles.map(article => (
+                    <Card key={article.id} article={article} />
+                ))}
+            </div>
+
         </>
     )
 
@@ -132,4 +137,4 @@ getArticles()
         */
 }
 
-export default Popular;
+export default Search;
