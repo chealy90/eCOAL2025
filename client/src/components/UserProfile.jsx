@@ -12,7 +12,7 @@ function UserProfile() {
                     <img className={styles.imgUser} src={UserImg} alt="User Image" />
                     <h2 className={styles.userName}>Flying Baguette</h2>
                 </div>
-                <p>example@email.com</p>
+                <p className={styles.mail}>example@email.com</p>
                 <Link className={styles.lien} to={"/new-article"}>+ Add Article</Link>
         
 
