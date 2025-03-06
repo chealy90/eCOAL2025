@@ -8,12 +8,12 @@ body{
     align-items: center;
     justify-content: flex-start;
     width: 90%;
-    height: 400px;
-    margin: auto;
+    height: 20rem;
+    margin: 2rem auto;
     overflow: hidden;
     color: #eee;
     border-radius: 10px;
-    
+    aspect-ratio: 1/1;
     z-index: 0;
     position: relative;
 }
@@ -21,17 +21,17 @@ body{
 .overlay {
     background-position: center;
     background-size: cover;
-    
     width: 100%;
-    height: 400px !important;
+
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-content: center;
     z-index: 10;
+
   
 }
 
@@ -39,11 +39,11 @@ body{
 .blockTitle{
     display: flex;
     width: 100%;
-    height: 40%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: rgba(14, 14, 14, 0.6);
+    padding: 2rem;
 
 
 
@@ -52,7 +52,9 @@ body{
 .articleH1{
     justify-self: flex-start;
     width: 40%;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    color: #ffffff;
+    flex-grow: 1;
 }
 
 .articleInfo {

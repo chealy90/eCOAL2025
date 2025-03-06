@@ -50,12 +50,9 @@ function Detail_home(props) {
  
     return (
         <div className={styles.detailArticle}>  
-        <div className="overlay" style={{backgroundImage: `url(${props.article.thumbnailURL})` }}>
+        <div className={styles.overlay} style={{backgroundImage: `url(${props.article.thumbnailURL})` }}>
             <div className={styles.blockTitle}>
                 <h1 className={styles.articleH1}>{props.article.title}</h1>
-                <div className="articleInfo">
-                <p>{props.article.updated_at ? formatDate(props.article.updated_at) : formatDate(props.article.created_at)}</p>
-                </div>
             </div>
             <p className={styles.articleContent}>{props.article.content}</p>         
             
