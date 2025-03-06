@@ -1,0 +1,22 @@
+#homeContainer {
+    padding: 25px;
+}
+
+
+h3 {
+    width: 80%;
+    margin: auto;
+    text-align: left;
+    font-size: 1.8rem;
+    margin-block: 20px;
+    color: #2A2A2A;
+}
+
+.popularContainer #showMore {
+    color: #7E3086;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    width: 90%;
+    text-align: right;
+    margin: auto;   
+}
