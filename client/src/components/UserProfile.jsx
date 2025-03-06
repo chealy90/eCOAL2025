@@ -48,7 +48,7 @@ function UserProfile(props) {
                 })
             console.log("data", response.data)
             props.removeCookie("mycookie")
-            // navigate('/')
+            navigate('/')
         } catch (error) {
             console.log("error", error);
         }
