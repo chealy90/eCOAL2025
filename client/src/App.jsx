@@ -11,6 +11,7 @@ import { Routes, Route, Link } from 'react-router'
 import react from 'react'
 import Article from './components/Article.jsx'
 import Detail from './components/Detail.jsx'
+import Footer from './components/Footer.jsx'
 
 import UserProfile from "./components/UserProfile"
 import Search from "./components/Search"
@@ -32,6 +33,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/profile" element={<UserProfile />} />
       </Routes>
+      <Footer/>
 
     </>
   )
