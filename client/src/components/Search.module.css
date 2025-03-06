@@ -8,7 +8,7 @@ main {
     margin-bottom: 300px;
 }
 
-h1 {
+.searchContainer h1 {
     display: flex;
     font-size: 27px;
     justify-content: flex-start;
