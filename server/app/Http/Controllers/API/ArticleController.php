@@ -31,8 +31,8 @@ class ArticleController extends Controller
             'title' => 'required|string',
             'content' => 'required|string',
             'thumbnailURL' => 'required|file|mimes:jpeg,png,jpg,gif,svg, video/mp4, video/avi',
-            'mediaType' => 'string',
-            'mediaURL' => 'required|file|mimes:jpeg,png,jpg,gif,svg, video/mp4, video/avi',
+            'mediaType' => 'required|string',
+            'mediaURL' => 'required|file|mimes:jpeg,png,jpg,gif,svg, video/mp4, video/avi|max:30720'
         ]);
 
         $f1 = $request->file('thumbnailURL')->hashName();

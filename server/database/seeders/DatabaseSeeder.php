@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
                 'thumbnailURL' => 'https://www.leparisien.fr/resizer/21Upx8OWmCYdFmb24C2c1rgFefk=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/NCO2PQS5XJBGFDLYRUATKCDKFQ.jpg',
                 'mediaType' => 'image',
                 'mediaURL' => 'metallica.jpg',
-                'leadStory' => false
+                'leadStory' => true
             ],
             [
                 'title' => 'Beyoncé Shines Bright in Paris',
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'thumbnailURL' => 'https://www.rollingstone.fr/wp-content/uploads/2024/07/the-rolling-stones.jpg',
                 'mediaType' => 'image',
                 'mediaURL' => 'rollingstones.jpg',
-                'leadStory' => false
+                'leadStory' => true
             ],
             [
                 'title' => 'Travis Scott Brings the Hype to Houston',
@@ -62,7 +62,7 @@ class DatabaseSeeder extends Seeder
                 'thumbnailURL' => 'https://www.observatoiredeleurope.com/wp-content/uploads/2024/09/1726651153_La-tournee-2025-de-Coldplay-proposera-des-billets-abordables-et.jpg',
                 'mediaType' => 'image',
                 'mediaURL' => 'coldplay.jpg',
-                'leadStory' => false
+                'leadStory' => true
             ],
             [
                 'title' => 'Kendrick Lamar’s Lyrical Mastery in New York',

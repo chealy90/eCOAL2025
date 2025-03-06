@@ -25,7 +25,7 @@ const Home = () => {
     }, [])
 
     const popularContainer = 
-    <div class="popularCard">
+    <div className="popularCard">
         <h4></h4>
         <div>
             <p>13/</p>

@@ -34,14 +34,17 @@ function Detail() {
     return (
         <div className={styles.detailArticle}>
             <div className={styles.blockTitle}>
-                <h1 className={styles.articleH1}>{article1.title}</h1>
+                <h2 className={styles.articleH1}>{article1.title}</h2>
                 <div className={styles.blockIcons}>
-                    <CiHeart className={styles.icon}/>
-                    <CiShare2 className={styles.icon}/>
+                    <CiHeart className={styles.icon} />
+                    <CiShare2 className={styles.icon} />
                 </div>
             </div>
             <p className={styles.articleContent}>{article1.content}</p>
             <img className={styles.imgArticle} src={article1.thumbnailURL} alt={article1.title} />
+            {/* {article1.mediaType === "video" ? <video className={styles.videoArticle} controls><source src={article1.mediaURL} type="video/mp4" /></video> : null}
+            {article1.mediaType === "audio" ? <audio className={styles.audioArticle} controls><source src={article1.mediaURL} type="audio/mp3" /></audio> : null}
+            {article1.mediaType === "image" ? <img className={styles.imgArticle} src={article1.mediaURL} alt={article1.title} /> : null} */}
         </div>
     )
 }

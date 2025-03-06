@@ -19,6 +19,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+h1, h3 {
+    font-family: 'Koulen', sans-serif;
+    color: var(--dark-color);
+}
+
 #root {
     min-height: 100vh;
     display: flex;

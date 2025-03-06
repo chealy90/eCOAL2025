@@ -9,11 +9,13 @@ body{
     flex-direction: column;
     margin-top: 3rem;
     width: 80%;
+    margin-bottom: 5rem;
 }
 
 .blockTitle{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-bottom: 2rem;
 }

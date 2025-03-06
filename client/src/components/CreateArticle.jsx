@@ -39,6 +39,7 @@ function CreateArticle() {
         });
         setStatus(resp.status === 201 ? "OK" : "Error.");
     };
+    
 
     if (status == "OK") {
         navigate("/");
