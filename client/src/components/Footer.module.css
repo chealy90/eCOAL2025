@@ -1,0 +1,23 @@
+.pageFooter {
+	position: fixed;
+	bottom: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 75px;
+	padding: 0 20px;
+	background-color: var(--dark-color);
+
+}
+
+.footerIcon {
+    margin-left: 2rem;
+    margin-right: 2rem;
+	width: 24px;
+	height: 24px;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+    color: white;
+}

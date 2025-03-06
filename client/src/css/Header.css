@@ -12,7 +12,7 @@
     font-family: sans-serif;
 }
 
-h1 {
+.pageHeader h1 {
 	width: 100%;
 	text-align: center;
 }
