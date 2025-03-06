@@ -6,6 +6,7 @@ import Header from './components/Header'
 import CreateArticle from './components/CreateArticle'
 import Login from './components/Login'
 import Register from './components/Register'
+import Home from './components/Home.jsx'
 import { useCookies } from 'react-cookie'
 import { Routes, Route, Link } from 'react-router'
 import react from 'react'
@@ -26,8 +27,12 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<h2>cc</h2>}/>
+<<<<<<< HEAD
         <Route path='createArticle' element={<CreateArticle setCookie={setCookie}/>}/>
         <Route path='/detail/:id' element={<Detail />}/>
+=======
+        <Route path='/home' element={<Home />}/>
+>>>>>>> home_page
         <Route path="/login" element={<Login setCookie={setCookie}/>} />
         <Route path="/register" element={<Register setCookie={setCookie}/>} />
         <Route path="/search" element={<Search />} />
