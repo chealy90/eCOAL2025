@@ -25,11 +25,10 @@ function Login(props) {
                 'Accept': 'application/json'
             }
         })
-
         if(result.status == 200) {
-            props.setCookie("mycookie", {name: result.data.name, token: result.data.token}, "/")
-            navigate('/')
-            console.log(result)
+            props.setCookie("mycookie", {name: result.data.name, token: result.data.access_token}, "/")
+            // navigate('/')
+            console.log("result",result)
         }
 
 

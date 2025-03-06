@@ -33,7 +33,7 @@ function App() {
         <Route path="/login" element={<Login setCookie={setCookie}/>} />
         <Route path="/register" element={<Register setCookie={setCookie}/>} />
         <Route path="/search" element={<Search />} />
-        <Route path="/profile" element={<UserProfile />} />
+        <Route path="/profile" element={<UserProfile cookies={cookies}/>} />
       </Routes>
       <Footer/>
 

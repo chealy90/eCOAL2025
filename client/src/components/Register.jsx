@@ -32,7 +32,7 @@ function Register(props) {
         })
         
         if(result.status == 200) {
-            props.setCookie("mycookie", {name: result.data.name, token: result.data.token}, "/")
+            props.setCookie("mycookie", {name: result.data.name, token: result.data.access_token}, "/")
             navigate('/')
             console.log(result)
         }
