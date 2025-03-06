@@ -40,8 +40,8 @@ function Detail() {
                     <CiShare2 className={styles.icon}/>
                 </div>
             </div>
-            <p className={styles.articleContent}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit recusandae facere id sit quam earum quos consequatur soluta maiores consequuntur optio cupiditate fugiat blanditiis veritatis molestias, possimus cum aut incidunt.</p>
-            <img className={styles.imgArticle} src="https://www.photobox.fr/content/blog/uploads/2017/06/scene-de-concert-foule-lumieres.jpg?w=1800" />
+            <p className={styles.articleContent}>{article1.content}</p>
+            <img className={styles.imgArticle} src={article1.thumbnailURL} alt={article1.title} />
         </div>
     )
 }
