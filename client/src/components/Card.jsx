@@ -16,7 +16,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import styles from "./Card.module.css"
-import { Link } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { Content } from 'antd/es/layout/layout';
 
 
 // NOTE: When the css is finally finished, we'll apply 'props' and replace the
@@ -28,6 +29,21 @@ export default function Post(props) {
         setFavorite(!favorite);  // Toggles the 'favorite' state
     };
 
+    const truncateText = (text, maxLength) => {
+        if (text.length <= maxLength) return text
+        return text.substr(0, maxLength) + '...'
+    };
+
+    const ContentCard = ({ content }) => {
+        return (
+            truncateText(content, 100)
+        );
+    };
+
+    function formatDate(date) {
+        const d = new Date(date);
+        return d.toLocaleDateString()
+    }
 
     return (
         <Card sx={{ maxWidth: 345 }} className={styles.card}>
@@ -42,12 +58,12 @@ export default function Post(props) {
                         <MoreVertIcon />
                     </IconButton>
                 }
-                title={props.title}
-                subheader={props.update_at ? props.update_at : props.create_at}
+                title={props.article.title}
+                subheader={props.article.updated_at ? formatDate(props.article.updated_at) : formatDate(props.article.created_at)}
             />
             <CardContent>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {/* FIX: Insert function to send sinopse*/}
+                    <ContentCard content={props.article.content} />
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -64,7 +80,8 @@ export default function Post(props) {
             </CardActions>
 
             <div>
-                <Link top={}>See more</Link>
+                {/* <Link to={"/articles/"+props.article.id} className={styles.article} key={props.article.id}>See more</Link> */}
+                <Link to={"/profile"} className={styles.article} key={props.article.id}>See more</Link>
             </div>
 
         </Card >

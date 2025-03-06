@@ -21,8 +21,8 @@ use App\Http\Controllers\API\ArticleController;
 
 Route::apiResource('articles', ArticleController::class);
 Route::apiResource('tags', TagController::class);
-Route::get("searchcount", function(Request $request) {
-    return Article::whereRaw("title like CONCAT('%',?,'%')", [$request->input("search")])->count();
+Route::get("search", function(Request $request) {
+    return Article::whereRaw("title like CONCAT('%',?,'%')", [$request->input("search")])->get();
 
 });
 
