@@ -8,13 +8,19 @@ import { CiSearch } from "react-icons/ci";
 import { CiUser } from "react-icons/ci";
 import { Link } from 'react-router';
 
-function Footer() {
+function Footer(props) {
 
     return (
         <div className={styles.pageFooter}>
                 <Link to="/search"><CiSearch className={styles.footerIcon} /></Link>
                 <Link to="/home"><CiHome className={styles.footerIcon} /></Link>
-                <Link to="/profile"><CiUser className={styles.footerIcon} /></Link>
+                { props.cookies?.mycookie ?
+                     <Link to="/profile"><CiUser className={styles.footerIcon} /></Link> 
+                     : 
+                     <Link to="/login"><CiUser className={styles.footerIcon} /></Link>
+
+
+                }
         </div>
     )
 

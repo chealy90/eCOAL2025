@@ -11,6 +11,17 @@
     border: #2a2a2a 1px solid;
 }
 
+.col_container button{
+    background-color: transparent;
+    color: #2a2a2a;
+    border: none;
+    padding: 1rem;
+    width: 5%;
+    margin-left: 80%;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+
 .userName{
     color: #2a2a2a;
     font-size: 1.5rem; 
@@ -47,4 +58,20 @@
     color: #2a2a2a;
     font-size: 1.5rem; 
     margin-top: 2rem;
+}
+
+.logout{
+    color: #2a2a2a;
+    font-size: 1.5rem;
+}
+
+.logout_container{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 1rem;
+}
+
+.logout_container button{
+    background-color: transparent;
+    border: none;
 }

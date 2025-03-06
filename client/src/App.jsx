@@ -26,16 +26,16 @@ function App() {
 
       <Header/>
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path='/' element={<Home/>}/>
         <Route path='createArticle' element={<CreateArticle setCookie={setCookie}/>}/>
         <Route path='/detail/:id' element={<Detail />}/>
         <Route path='/home' element={<Home />}/>
         <Route path="/login" element={<Login setCookie={setCookie}/>} />
         <Route path="/register" element={<Register setCookie={setCookie}/>} />
         <Route path="/search" element={<Search />} />
-        <Route path="/profile" element={<UserProfile cookies={cookies}/>} />
+        <Route path="/profile" element={<UserProfile cookies={cookies} removeCookie={removeCookie}/>} />
       </Routes>
-      <Footer/>
+      <Footer cookies={cookies}/>
 
     </>
   )
