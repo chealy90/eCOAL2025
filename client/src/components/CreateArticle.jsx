@@ -46,7 +46,7 @@ function CreateArticle() {
     return (
     <div id="createArticleContainer">
         <form onSubmit={submitArticle}>
-            <h3>+ ADD A NEW ARTICLE</h3>
+            <h3 id="h3_add">+ ADD A NEW ARTICLE</h3>
             <input type="text"
                 name="title"
                 id="articleNameInput"

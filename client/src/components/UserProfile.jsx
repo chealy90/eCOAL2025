@@ -62,7 +62,7 @@ function UserProfile(props) {
                     <h2 className={styles.userName}>{profile?.name}</h2>
                 </div>
                 <p>{profile?.email}</p>
-                <Link className={styles.lien} to={"/new-article"}>+ Add Article</Link>
+                <Link className={styles.lien} to={"/createArticle"}>+ Add Article</Link>
                 <button onClick={logout}><CiLogout className={styles.logout} /></button>
             </div>
         </div>
