@@ -14,7 +14,12 @@ h4 {
     font-size: 1.2rem;
 }
 
-div p {
-    text-align: right;
+.homePopularContainerDate{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+.homePopularContainerDate p{
+font-size: 0.8rem;
 }
 

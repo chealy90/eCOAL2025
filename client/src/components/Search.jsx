@@ -35,11 +35,11 @@ function Search() {
     }, [search])
 
     return (
-        <>
+        <div className={styles.blockContainer}>
             <div className={styles.searchContainer}>
-                <h1>Search</h1>
-                <form onSubmit={e => changeSearch(e)}>
-                    <Input.Search name={search} size="large" placeholder="Search e.g. 'title'" enterButton />
+                <h1 >Search</h1>
+                <form className={styles.formSearch} onSubmit={e => changeSearch(e)}>
+                    <Input.Search className={styles.truc} name={search} size="large" placeholder="Search e.g. 'title'" enterButton />
                 </form>
             </div>
             <div className={styles.cardsTile}>
@@ -47,8 +47,7 @@ function Search() {
                     <Card key={article.id} article={article} />
                 ))}
             </div>
-
-        </>
+        </div>
     )
 
 

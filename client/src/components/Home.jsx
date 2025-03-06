@@ -5,7 +5,9 @@ import { useState } from "react"
 import { useEffect } from "react"
 import axios from "axios"
 import "../css/Home.css"
+import styles from "./Home.module.css"
 import HomePopularContainer from "./HomePopularContainer";
+import { Link } from "react-router"
 
 const Home = () => {
     
@@ -46,17 +48,17 @@ const [articlesp, setArticlesp] = useState([])
 
     return (
         <>
-        <div id="homeContainer">
-            <h3>Popular</h3>
+        <div className={styles.homeContainer}>
+            <h3 className={styles.h3home}>Popular</h3>
             <Carousel>
-                {articlesp.map(article => <Detail_home article={article}/>)}
+                {articlesp.map(article => <Link className={styles.homeLien} to={"/detail/"+article.id}><Detail_home article={article}/></Link>)}
             </Carousel>
 
 
             <h3>All</h3>
-            <div className="popularContainer">
-                <p id="showMore">Show More</p>
-                {articles.map(article => <HomePopularContainer article={article}/>)}
+            <div className={styles.popularContainer}>
+            
+                {articles.map(article => <Link className={styles.homeLien} to={"/detail/"+article.id}><HomePopularContainer article={article}/></Link>)}
             </div>
         </div>
         

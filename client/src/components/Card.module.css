@@ -2,3 +2,18 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.avatar{
+    object-position: center;
+    object-fit: cover;
+}
+
+.seeMore{
+    display: flex;
+    justify-self: center;
+    margin-bottom: 1rem;
+}
+.article{
+   text-decoration: none;
+   color: #7E3086;
+}
