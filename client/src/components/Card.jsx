@@ -16,7 +16,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import styles from "./Card.module.css"
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { Content } from 'antd/es/layout/layout';
 
 
