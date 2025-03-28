@@ -3,7 +3,7 @@ Repo for collaborative project in Lens 2025.
 
 ## Technologies
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Laravel](https://img.shields.io/badge/Laravel-61DAFB?style=flat&logo=react&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-61DAFB?style=for-the-badge&logo=react&logoColor=white)
 
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
